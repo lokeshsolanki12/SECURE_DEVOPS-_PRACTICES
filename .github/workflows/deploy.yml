@@ -7,7 +7,6 @@ on:
 
 jobs:
   deploy:
-    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
 
     steps:
@@ -17,5 +16,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          personal_token: ${{ secrets.TASKTOKEN }}
-          publish_dir: .  
+          personal_token: ${{ secrets.TOKENTASK }}
+          publish_dir: .
