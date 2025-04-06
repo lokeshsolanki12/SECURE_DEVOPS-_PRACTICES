@@ -16,7 +16,7 @@ jobs:
       - name: Setup Java (required by SonarScanner)
         uses: actions/setup-java@v3
         with:
-          java-version: '17'
+          java-version: "17"
 
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
@@ -28,9 +28,9 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
         with:
-          organization: lokeshsolanki12
-          projectKey: lokeshsolanki12_SECURE_DEVOPS-_PRACTICES
-          token: ${{ secrets.SONAR_TOKEN }}
+          organization: "lokeshsolanki12"
+          projectKey: "lokeshsolanki12_SECURE_DEVOPS-_PRACTICES"
+          token: "${{ secrets.SONAR_TOKEN }}"
 
   deploy:
     needs: build-and-scan
