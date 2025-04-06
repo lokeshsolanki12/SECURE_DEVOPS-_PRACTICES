@@ -28,11 +28,13 @@ jobs:
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          organization: "lokeshsolanki12"
-          projectKey: "lokeshsolanki12_SECURE_DEVOPS-_PRACTICES"
-          token: "${{ secrets.SONAR_TOKEN }}"
-
+          projectBaseDir: .
+          args: >
+            -Dsonar.organization=lokeshsolanki12
+            -Dsonar.projectKey=lokeshsolanki12_SECURE_DEVOPS-_PRACTICES
   deploy:
     needs: build-and-scan
     runs-on: ubuntu-latest
