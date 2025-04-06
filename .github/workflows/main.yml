@@ -35,6 +35,8 @@ jobs:
           args: >
             -Dsonar.organization=lokeshsolanki12
             -Dsonar.projectKey=lokeshsolanki12_SECURE_DEVOPS-_PRACTICES
+            -Dsonar.cloud.enabled=false
+
   deploy:
     needs: build-and-scan
     runs-on: ubuntu-latest
